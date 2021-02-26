@@ -9,5 +9,11 @@
 # - Результат должен быть выведен в консоль командой puts
 #
 ## Решение:
-
-
+res=0
+file=File.open('data\\3.txt', 'r')
+for line in file.readlines()
+    a=line.split(' ').map(&:to_i)
+    res+= a.max - a.min
+end
+file.close()
+puts 'Код от замка: #{res}'

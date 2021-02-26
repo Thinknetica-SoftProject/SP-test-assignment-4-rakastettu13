@@ -15,5 +15,12 @@
 #
 #
 ## Решение:
-
-
+res = 0
+file = File.open('data\\4.txt', 'r')
+for line in file.readlines()
+    a = line.split('x').map(&:to_i)
+    b = [ a[0]*a[1] , a[1]*a[2] , a[2]*a[0] ]
+    res += 2 * b.inject(0, :+) + b.min
+end
+file.close()
+puts "Эльфам понадобится #{res} кв. см оберточной бумаги"

@@ -15,7 +15,8 @@
 #
 #
 ## Решение:
-
-
-
-
+file = File.open("data\\1.txt", "r")
+f = file.read
+file.close
+floor = f.count("(") - f.count(")")
+puts "Бомба находится на #{floor} этаже"

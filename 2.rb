@@ -15,4 +15,20 @@
 #
 #
 ## Решение:
-
+str = gets.chomp
+require 'digest'
+md5 = Digest::MD5.new
+md5.update str
+if md5.to_s[0...5] !="00000"
+    i=0
+    while md5.to_s[0...5] != "00000"
+        md5.reset
+        s=String.new(str)
+        s.concat(i.to_s)
+        md5.update s
+        i+=1
+    end
+    puts "MD5 хэш: #{md5} \nНайденное число: #{i-1}"
+else
+puts "MD5 хэш введенной строки начинается с пяти нулей"
+end
