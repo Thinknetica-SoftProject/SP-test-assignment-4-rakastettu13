@@ -28,7 +28,7 @@ if md5.to_s[0...5] !="00000"
         md5.update s
         i+=1
     end
-    puts "MD5 хэш: #{md5} \nНайденное число: #{i-1}"
+    puts i-1
 else
-puts "MD5 хэш введенной строки начинается с пяти нулей"
+puts nil
 end
