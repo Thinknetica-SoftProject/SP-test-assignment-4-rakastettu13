@@ -16,4 +16,4 @@ for line in file.readlines()
     res+= a.max - a.min
 end
 file.close()
-puts 'Код от замка: #{res}'
+puts "Код от замка: #{res}"
